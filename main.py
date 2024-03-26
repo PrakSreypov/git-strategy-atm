@@ -51,8 +51,12 @@ def transfer():
                 users[current_user]['balance'] -= amount
                 users[recipient]['balance'] += amount
                 print(f"Transferred ${amount} to {recipient} successfully.")
+            else:
+                print("Insufficient funds.")
         else:
             print("Recipient not found.")
+    else:
+        print("Please sign in to transfer money.")
 
 def withdraw():
     global users, current_user

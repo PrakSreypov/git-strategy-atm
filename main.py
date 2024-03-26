@@ -13,6 +13,7 @@ def sign_up():
         print("Username already exists. Please choose another username.")
         return
     password = input("Set password: ")
+    phone = input("Phone Number:")
     #balance = float(input("Enter initial balance: "))
     users[username] = {"password": password, "balance": 0, 'Loan': 0}
     current_user = username

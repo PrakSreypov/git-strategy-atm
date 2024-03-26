@@ -132,9 +132,8 @@ def display():
         print("6. Transfer")
         print("7. Payment")
         print("8. Loan")
-        print("9. Profile")
-        print("10. Logout")
-        print("11. Exit")
+        print("9. Profile")        
+        print("10. Exit")
         
         choice = input("Enter your choice: ")
 
@@ -156,7 +155,7 @@ def display():
             loan()
         elif choice == '9':
             profile()
-        elif choice == '11':
+        elif choice == '10':
             print("Exiting...")
             break
         else:

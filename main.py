@@ -101,8 +101,11 @@ def deposit():
     if current_user:
         clear()
         amount = float(input("Enter amount to deposit: "))
-        users[current_user]['balance'] += amount
-        print(f"Deposited ${amount}. New balance: ${users[current_user]['balance']}")
+        if amount <= 5:
+            print("please enter more money!")
+        else:
+            users[current_user]['balance'] += amount
+            print(f"Deposited ${amount}. New balance: ${users[current_user]['balance']}")
     else:
         clear()
         print("Please sign in first.")

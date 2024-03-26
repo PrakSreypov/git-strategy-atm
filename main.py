@@ -69,3 +69,47 @@ def check_balance():
     else:
         print("Please sign in first.")
 
+# # B Bunthong 
+def display():
+    while True:
+        print("\n1. Sign Up")
+        print("2. Sign In")
+        print("3. Check Balance")
+        print("4. Deposit")
+        print("5. Withdraw")
+        print("6. Transfer")
+        print("7. Payment")
+        print("8. Loan")
+        print("9. Profile")
+        print("10. Logout")
+        print("11. Exit")
+        
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            sign_up()
+        elif choice == '2':
+            sign_in()
+        elif choice == '3':
+            check_balance()
+        elif choice == '4':
+            deposit()
+        elif choice == '5':
+            withdraw()
+        elif choice == '6':
+            transfer()
+        elif choice == '7':
+            payment()
+        elif choice == '8':
+            loan()
+        elif choice == '9':
+            profile()
+        elif choice == '11':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    display()

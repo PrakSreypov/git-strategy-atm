@@ -72,6 +72,7 @@ def check_balance():
         print("Please sign in first.")
 
 
+
 def deposit():
     global users, current_user
     if current_user:
@@ -100,3 +101,12 @@ def loan():
         print(f"Loan of ${amount} credited to your account. New balance: ${users[current_user]['balance']}")
     else:
         print("Please sign in to apply for a loan.")
+
+def profile():
+    global users, current_user
+    if current_user:
+        print(f"Balance: ${users[current_user]['balance']}")
+    else:
+        print("Please sign in first.")
+
+

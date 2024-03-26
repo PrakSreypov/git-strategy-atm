@@ -1,6 +1,6 @@
 users = {
-    "user1": {"password": "1234", "balance": 1000},
-    "user2": {"password": "5678", "balance": 2000}
+    "user1": {"password": "1234", "balance": 1000, 'Loan': 0},
+    "user2": {"password": "5678", "balance": 2000, 'Loan': 0}
 }
 current_user = None
 
@@ -13,8 +13,10 @@ def sign_up():
         print("Username already exists. Please choose another username.")
         return
     password = input("Set password: ")
+    phone = input("Phone Number:")
+    address =  input("Address:")
     #balance = float(input("Enter initial balance: "))
-    users[username] = {"password": password, "balance": 0}
+    users[username] = {"password": password, "balance": 0, 'Loan': 0}
     current_user = username
     print("Account created successfuly.")
     print()
@@ -50,8 +52,12 @@ def transfer():
                 users[current_user]['balance'] -= amount
                 users[recipient]['balance'] += amount
                 print(f"Transferred ${amount} to {recipient} successfully.")
+            else:
+                print("Insufficient funds.")
         else:
             print("Recipient not found.")
+    else:
+        print("Please sign in to transfer money.")
 
 def withdraw():
     global users, current_user
@@ -59,7 +65,7 @@ def withdraw():
         amount = float(input("Enter amount to withdraw: "))
         if amount <= users[current_user]['balance']:
             users[current_user]['balance'] -= amount
-            print(f"Withdrew ${amount} successfully.")
+            print(f"Withdrew ${amount} successfully. New balance: ${users[current_user]['balance']}")
     else:
         print("Please sign in first.")
 
@@ -78,7 +84,7 @@ def deposit():
     if current_user:
         amount = float(input("Enter amount to deposit: "))
         users[current_user]['balance'] += amount
-        print(f"Deposited successfully. New balance: ${users[current_user]['balance']}")
+        print(f"Deposited ${amount}. New balance: ${users[current_user]['balance']}")
     else:
         print("Please sign in first.")
 
@@ -91,7 +97,7 @@ def payment():
         amount = float(input("Enter payment amount: "))
         if amount <= users[current_user]["balance"]:
             users[current_user]["balance"] -= amount
-            print(f"Payment of ${amount} to {recipient} successful.")
+            print(f"Payment of this ${amount} to {recipient} successful.")
         else:
             print("Insufficient funds.")
     else:

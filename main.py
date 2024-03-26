@@ -92,7 +92,7 @@ def payment():
         amount = float(input("Enter payment amount: "))
         if amount <= users[current_user]["balance"]:
             users[current_user]["balance"] -= amount
-            print(f"Payment of ${amount} to {recipient} successful.")
+            print(f"Payment of this ${amount} to {recipient} successful.")
         else:
             print("Insufficient funds.")
     else:

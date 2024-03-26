@@ -73,7 +73,7 @@ def withdraw():
 def check_balance():
     global users, current_user
     if current_user:
-        print(f"Your balance is: {users[current_user]['balance']}" +"$$")
+        print(f"Your balance is: {users[current_user]['balance']}")
     else:
         print("Please sign in first.")
 

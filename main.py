@@ -36,3 +36,15 @@ def sign_in():
             print("---Please reenter again---")
             print("==========================")
             print()
+
+def payment():
+    if current_user:
+        recipient = input("Enter payment recipient: ")
+        amount = float(input("Enter payment amount: "))
+        if amount <= users[current_user]["balance"]:
+            users[current_user]["balance"] -= amount
+            print(f"Payment of ${amount} to {recipient} successful.")
+        else:
+            print("Insufficient funds.")
+    else:
+        print("Please sign in to make a payment.")

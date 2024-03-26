@@ -4,6 +4,7 @@ users = {
 }
 current_user = None
 
+
 def sign_up():
     global users
     print("---- create an account ----")
@@ -69,3 +70,12 @@ def check_balance():
     else:
         print("Please sign in first.")
 
+
+def deposit():
+    global users, current_user
+    if current_user:
+        amount = float(input("Enter amount to deposit: "))
+        users[current_user]['balance'] += amount
+        print(f"Deposited successfully. New balance: ${users[current_user]['balance']}")
+    else:
+        print("Please sign in first.")

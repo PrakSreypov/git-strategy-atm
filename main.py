@@ -39,6 +39,7 @@ def sign_in():
             print()
 
 
+
 def transfer():
     global users, current_user
     if current_user:
@@ -79,3 +80,16 @@ def deposit():
         print(f"Deposited successfully. New balance: ${users[current_user]['balance']}")
     else:
         print("Please sign in first.")
+
+def payment():
+    if current_user:
+        recipient = input("Enter payment recipient: ")
+        amount = float(input("Enter payment amount: "))
+        if amount <= users[current_user]["balance"]:
+            users[current_user]["balance"] -= amount
+            print(f"Payment of ${amount} to {recipient} successful.")
+        else:
+            print("Insufficient funds.")
+    else:
+        print("Please sign in to make a payment.")
+

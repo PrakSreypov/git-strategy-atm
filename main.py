@@ -36,6 +36,7 @@ def sign_in():
             print("---Please reenter again---")
             print("==========================")
             print()
+<<<<<<< HEAD
 
 
 def transfer():
@@ -69,3 +70,11 @@ def check_balance():
     else:
         print("Please sign in first.")
 
+=======
+def profile():
+    global users, current_user
+    if current_user:
+        print(f"Balance: ${users[current_user]['balance']}")
+    else:
+        print("Please sign in first.")
+>>>>>>> 2745951 (add a profile)

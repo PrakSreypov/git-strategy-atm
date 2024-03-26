@@ -66,6 +66,8 @@ def withdraw():
         if amount <= users[current_user]['balance']:
             users[current_user]['balance'] -= amount
             print(f"Withdrew ${amount} successfully. New balance: ${users[current_user]['balance']}")
+        else:
+            print("Insufficient funds.")
     else:
         print("Please sign in first.")
 

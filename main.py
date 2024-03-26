@@ -37,7 +37,7 @@ def sign_in():
         else:
             print("Invalid user name or password")
             print("---Please reenter again---")
-            print("==========================")
+            print("=*" * 12)
             print()
 
 

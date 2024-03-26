@@ -1,6 +1,6 @@
 users = {
-    "user1": {"password": "1234", "balance": 1000},
-    "user2": {"password": "5678", "balance": 2000}
+    "user1": {"password": "1234", "balance": 1000, 'Loan': 0},
+    "user2": {"password": "5678", "balance": 2000, 'Loan': 0}
 }
 current_user = None
 
@@ -14,7 +14,7 @@ def sign_up():
         return
     password = input("Set password: ")
     #balance = float(input("Enter initial balance: "))
-    users[username] = {"password": password, "balance": 0}
+    users[username] = {"password": password, "balance": 0, 'Loan': 0}
     current_user = username
     print("Account created successfuly.")
     print()

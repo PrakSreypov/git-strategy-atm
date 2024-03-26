@@ -37,6 +37,7 @@ def sign_in():
             print("==========================")
             print()
 
+
 def transfer():
     global users, current_user
     if current_user:
@@ -59,3 +60,12 @@ def withdraw():
             print(f"Withdrew ${amount} successfully.")
     else:
         print("Please sign in first.")
+
+# B Bonthong 
+def check_balance():
+    global users, current_user
+    if current_user:
+        print(f"Your balance is: {users[current_user]['balance']}")
+    else:
+        print("Please sign in first.")
+
